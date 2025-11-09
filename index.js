@@ -12,20 +12,24 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Try /random_joke, /random_ten, /jokes/random, or /jokes/ten , /jokes/random/<any-number>');
+  res.send('Welcome to the Jokes Apparatus Machine!');
 });
 
 app.get('/ping', (req, res) => {
   res.send('pong');
 });
 
-app.get('/random_joke', (req, res) => {
-  res.json(randomJoke());
+//app.get('/random_joke', (req, res) => {
+//  res.json(randomJoke());
+// });
+
+app.get('/jokes/count', (req, res) => {
+  res.json({ count });
 });
 
-app.get('/random_ten', (req, res) => {
-  res.json(randomTen());
-});
+//app.get('/random_ten', (req, res) => {
+//  res.json(randomTen());
+// });
 
 app.get('/jokes/random', (req, res) => {
   res.json(randomJoke());
